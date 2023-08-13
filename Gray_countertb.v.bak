@@ -1,0 +1,28 @@
+
+module Gray_countertb;
+
+    reg clk;
+    reg rst;
+    wire[2:0]Gray_output;
+
+    Gray_counter U0 ( .clk(clk), .rst(rst), .Gray_output(Gray_output));
+
+
+
+initial begin
+    clk = 0;
+    forever #0.5 clk =~clk;
+
+end
+
+always begin
+    rst = $random;
+    #5;
+end
+
+ 
+initial begin
+        #1000;
+        $finish;
+end
+endmodule
